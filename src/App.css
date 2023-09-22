@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* buttons */
+.btn {
+    background-color: #F23C17;
+}
+.btn2 {
+  background-color: #fff;
+}
+/* button hovers */
+.btn:hover {
+  background-color: #FEE9DE;
+}
+.btn2:hover {
+  background-color: #F23C17;
+}
+/* carousel */
+.carousel_card {
+  display: flex;
+  flex: 1;
+  position: absolute;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transformation: scale(0.5);
+  transition: 0.5s ease-in-out;
+}
+.carousel_card-active{
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: visible;
+}
+.carousel-pagination{
+ position: absolute;
+ left: 50%;
+ transform:translate(-50%, 0)
+}
+.pagination-dot {
+  background-color: #2F2F2FE5;
+  cursor: pointer;
+}
+.pagination-dot:hover {
+  transform: scale(1.2);
+}
+.pagination_active {
+  background-color: #F23C17;
+}
+
+
+@layer utilities {
+  #line {
+    @apply relative;
+  }
+  #line::after {
+    @apply content-[''] absolute bg-orange-600 h-[1px] w-[0%]
+  left-0 -bottom-[2px] rounded-lg duration-300;
+  }
+  #line:hover::after {
+    @apply w-[100%];
+  }
+}
+
+@layer base {
+  body {
+      @apply font-primary flex flex-col text-textColor text-lg leading-8 overflow-x-hidden;
+    }
+    .h1 {
+      @apply font-secondary font-semibold text-[32px] mb-6 tracking-[10%] uppercase;
+    }
+    .h2 {
+      @apply font-secondary font-semibold lg:text-[54px] text-[24px] mb-6 leading-[76px];
+    }
+    .h3 {
+      @apply font-secondary font-semibold text-[18px] lg:text-[18px] mb-6 leading-[46px] lg:tracking-wider;
+    }
+    .h4 {
+      @apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
+    }
+    .btn {
+      @apply rounded-3xl font-primary text-white font-medium h-[30px] px-6 text-sm tracking-normal;
+    }
+    .btn2 {
+      @apply rounded-lg font-primary font-medium h-[46px] px-10 text-base tracking-normal;
+    }
+    .section {
+      @apply py-8 lg:py-[36rem]  lg:max-h-screen flex items-center scroll-mt-[4rem];
+    }
+}
