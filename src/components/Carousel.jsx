@@ -29,7 +29,7 @@ const Carousel = () => {
   }
   return (
     <div className="">
-     <div className={`transition-all static ease-in duration-700 ${open ? '-mt-[4rem]' : '-mt-[18rem] lg:mt-0' } w-[81.5rem] h-[78rem] fixed -mt-[28rem] lg:-mt-[40rem] lg:-mx-[3rem] mx-[1rem] rounded-full bg-slate-100`}>
+     <div className={`transition-all static ease-in duration-700 ${open ? '-mt-[4rem]' : '-mt-[18rem] lg:mt-0' } w-[80rem] h-[78rem] fixed -mt-[28rem] lg:-mt-[40rem] lg:-mx-[3rem] mx-[1rem] rounded-full bg-slate-100 `}>
     </div>
        <div className="relative"> 
   {/* navbar */}
@@ -47,7 +47,7 @@ const Carousel = () => {
     {/* condition ? true : false */}
             return(  
               <div  key={index} className={`mt-[20rem] lg:mt-[28rem] lg:-mx-[0rem] -mx-[10rem] ${index === current ? "carousel_card carousel_card-active" : "carousel_card"} flex justify-center`} >
-               <img className="w-72 lg:w-80" src={menu.src} alt='coffee'/>
+               <img className="w-52 lg:w-80" src={menu.src} alt='coffee'/>
               </div>
             )
           })}
@@ -68,7 +68,7 @@ const Carousel = () => {
             </div>
           </div>
     {/*utilities  */}
-          <div className={`flex items-center justify-center space-x-[14rem] lg:space-x-[22rem] absolute top-[20rem] ${open ? 'mt-[16rem] lg:mt-0' : 'mt-[2rem] lg:mt-0' } transition-all ease-in-out duration-500`}>
+          <div className={`flex items-center justify-center space-x-[12rem] lg:space-x-[22rem] absolute top-[20rem] ${open ? 'mt-[16rem] lg:mt-0' : 'mt-[2rem] lg:mt-0' } transition-all ease-in-out duration-500`}>
             <AiOutlineClockCircle className="bg-primary text-white rounded-md w-10 h-10 p-2 -rotate-12"/>
             <div className="">
               <div className="p-6 space-y-8">
@@ -79,15 +79,16 @@ const Carousel = () => {
           </div>
         </div>
  {/* payment */}
-        <div className="flex flex-col items-center space-y-5 absolute lg:left-[60rem] lg:top-[24rem] left-[4rem] top-[19rem] ">
+        <div className="flex flex-col items-center space-y-3 absolute lg:left-[60rem] lg:top-[24rem] left-[2rem] top-[19rem] ">
             <span className="text-primary font-bold lg:text-4xl">$5</span>
            <button type="" className="bg-slate-800 px-6 text-white hover:bg-primary">Order</button>
         </div>
         
-      <div className="flex flex-col absolute lg:left-[12rem] left-[7rem] items-center mt-[6rem] lg:mt-[] lg:space-y-3 space-y-0">
-        <div className="lg:mt-[7rem] mx-[4rem] lg:left-[1rem] absolute right-[19rem]">
+      <div className="flex flex-col items-center mt-[5rem] lg:mt-[] lg:space-y-3 space-y-0">
+        <div className="lg:mt-[7rem] mx-[6rem] -mt-12 lg:left-[1rem] absolute right-[9rem] ">
           <button className="bg-secondary flex items-center text-primary p-2 text-sm rounded-2xl whitespace-nowrap hover:shadow-lg shadow-md">More than Faster <span className="px-2"><img src={fruit} alt=""/></span></button>
         </div>
+  {/* texts */}
           <div className="flex">
             <ul className="text-semibold flex lg:flex-col space-x-2 lg:space-x-0 mt-[22rem] lg:mt-[10rem] lg:mx-20 lg:space-y-3 space-y-0 " >
              {tea.map((menu, index)=>{

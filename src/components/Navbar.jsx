@@ -13,7 +13,7 @@ const Navbar = () => {
    }
 
   return (
-    <nav className="container ">
+    <nav className="overflow-x-hidden ">
      <div className='flex justify-between p-4 w-full whitespace-nowrap relative'>
       <div className='py-6 lg:text-primary'>
        <p className= "font-semibold">Food Call</p>
