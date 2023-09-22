@@ -38,7 +38,7 @@ const Carousel = () => {
        <div    
          className={`flex flex-col justify- transition-all ease-in duration-700 items-center ${open ? 'mt-[0rem] lg:mt-0' : '-mt-[18rem] lg:mt-0' } `}>
   {/* heading */}
-         <div className="uppercase absolute left-[20px] w-44 lg:w-full font-bold lg:py-6 lg:text-center lg:text-4xl -mt-10">
+         <div className="uppercase absolute left-[15px] w-44 lg:w-full font-bold lg:py-6 lg:text-center lg:text-4xl -mt-[5rem] ">
           <h2><span className="text-primary">Start</span> the <span className="text-primary">day</span> with something <span className="text-primary">hot.</span></h2>
          </div>
     {/* image text buttons*/}
@@ -59,7 +59,7 @@ const Carousel = () => {
                 <button className="bg-white font-bold flex items-center lg:w-[19rem] h-[3.8rem] text-sm rounded-3xl whitespace-nowrap hover:shadow-xl shadow-lg">
       {/* emoji */}
                 <div className=""><img src={emoji} alt="" className="w-10 h-10"/></div>
-                <span className="mb-3 mx-3"> Richard Watson </span>
+                <span className="mb-3 mx-4"> Richard Watson </span>
                   {/* text */}
                <span className="mt-8 absolute left-[3.6rem]  font-light text-sm">Food Courier</span>
                <div className="bg-primary w-10 h-10 mx-7 rounded-full flex items-center justify-center "><BsTelephone className="text-white"/></div>
@@ -79,13 +79,13 @@ const Carousel = () => {
           </div>
         </div>
  {/* payment */}
-        <div className="flex flex-col items-center space-y-3 absolute lg:left-[60rem] lg:top-[24rem] left-[2rem] top-[19rem] ">
+        <div className={`flex flex-col items-center space-y-3 absolute lg:left-[60rem] lg:top-[24rem] left-[1rem] top-[13rem]  ${open ? 'mt-[18rem] lg:mt-0' : '-mt-12rem] lg:mt-0' } transition-all ease-in duration-700`} >
             <span className="text-primary font-bold lg:text-4xl">$5</span>
            <button type="" className="bg-slate-800 px-6 text-white hover:bg-primary">Order</button>
         </div>
         
       <div className="flex flex-col items-center mt-[5rem] lg:mt-[] lg:space-y-3 space-y-0">
-        <div className="lg:mt-[7rem] mx-[6rem] -mt-12 lg:left-[1rem] absolute right-[9rem] ">
+        <div className="lg:mt-[7rem] mx-[6rem] -mt-32 lg:left-[1rem] lg:absolute ">
           <button className="bg-secondary flex items-center text-primary p-2 text-sm rounded-2xl whitespace-nowrap hover:shadow-lg shadow-md">More than Faster <span className="px-2"><img src={fruit} alt=""/></span></button>
         </div>
   {/* texts */}
@@ -94,7 +94,7 @@ const Carousel = () => {
              {tea.map((menu, index)=>{
              return (
               <div key={index}
-                className={`${index === current ? 'scale-110 lg:text-2xl text-sm text-primary lg:translate-x-4' : '' } text-md whitespace-nowrap`}
+                className={`${index === current ? 'scale-110 lg:text-2xl text-sm text-primary lg:translate-x-4' : '' } whitespace-nowrap`}
               >
                <li id="line" className="text-md">{menu.text}</li>
               </div>
@@ -105,7 +105,7 @@ const Carousel = () => {
       </div>
      
     {/* circles */}
-    <div className="flex space-x-2 lg:top-[42rem] top-[40rem] carousel-pagination">
+    <div className="flex space-x-2 lg:top-[42rem] top-[32rem] carousel-pagination">
      {tea.map((_, index) =>{
        return (
         <div key={index} 
