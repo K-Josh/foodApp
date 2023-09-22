@@ -13,7 +13,7 @@ const Navbar = () => {
    }
 
   return (
-    <nav className="overflow-x-hidden ">
+    <nav className="overflow-x-hidden container">
      <div className='flex justify-between p-4 w-full whitespace-nowrap relative'>
       <div className='py-6 lg:text-primary'>
        <p className= "font-semibold">Food Call</p>
@@ -32,7 +32,7 @@ const Navbar = () => {
             <Link id='line'  className='text-textColor cursor-pointer hover:text-primary'>Call Chef</Link>
           </div>
     {/* button and icons */}
-          <div className='flex items-center space-x-4 lg:-mx-[8rem] '>
+          <div className='flex items-center space-x-4 lg:-mx-[rem] '>
             <button className='btn hover:bg-orange-700'>Login</button>
     {/* icon and notification circle made with a div and the the position property */}
              <div className='flex items-center relative'>
