@@ -42,7 +42,7 @@ const Carousel = () => {
          </div>
   
   {/*Left side of page  */}
-      <div className={`${open ? 'mt-[19.9rem] lg:mt-0' : 'mt-[17rem] lg:mt-0' } transition-all ease-in-out duration-500 lg:flex lg:flex-col items-center mt-[17rem] lg:mt-[20rem] lg:space-y-3 lg:-mx-20 px-[3rem] space-y-9 mx-4 space-x-8 lg:space-x-0`}>
+      <div className={`${open ? 'mt-[19.9rem] lg:mt-0' : 'mt-[17rem] lg:mt-0' } transition-all ease-in-out duration-500 lg:flex lg:flex-col items-center mx-1 mt-[17rem] lg:mt-[20rem] lg:space-y-3 lg:-mx-20 px-[3rem] space-y-9 space-x-8 lg:space-x-0`}>
         <div className="lg:-mt-[2rem] -mt-32 -mx-6 lg:-mx-0">
           <button className="bg-secondary flex items-center text-primary p-2 text-sm rounded-2xl whitespace-nowrap hover:shadow-lg shadow-md">More than Faster <span className="px-2"><img src={fruit} alt=""/></span></button>
         </div>
@@ -76,7 +76,7 @@ const Carousel = () => {
           })}
 
            {/* circles */}
-       <div className="flex space-x-2 lg:mt-[28rem] mt-[4rem]">
+       <div className="flex space-x-2 lg:mt-[28rem] mt-[3.8rem]">
         {tea.map((_, index) =>{
        return (
         <div key={index} 
@@ -88,7 +88,7 @@ const Carousel = () => {
        </div>
 
     {/*utilities  */}
-          <div className={`lg:-mt-[32rem] -mt-[34rem] flex items-center justify-center space-x-[14rem] lg:space-x-[22rem] ${open ? 'mt-[rem] lg:mt-0' : '-mt-[26rem] lg:mt-0'} transition-all ease-in-out duration-500`}>
+          <div className={`lg:-mt-[32rem] -mt-[34rem] flex items-center justify-center space-x-[13rem] lg:space-x-[22rem] ${open ? 'mt-[rem] lg:mt-0' : '-mt-[26rem] lg:mt-0'} transition-all ease-in-out duration-500`}>
         {/* clock */}
             <div className="mx-2">
             <AiOutlineClockCircle className="bg-primary text-white rounded-md w-10 h-10 p-2 -rotate-12"/>
