@@ -5,7 +5,7 @@
 
 
 html {
-marging: 0;
+margin: 0;
 padding: 0;
 box-sizing: border-box;
 border: none !important
@@ -64,7 +64,6 @@ width: 100vw;
   background-color: #F23C17;
 }
 
-
 @layer utilities {
   #line {
     @apply relative;
@@ -73,9 +72,7 @@ width: 100vw;
     @apply content-[''] absolute bg-orange-600 h-[1px] w-[0%]
   left-0 -bottom-[2px] rounded-lg duration-300;
   }
-  #line:hover::after {
-    @apply w-[100%];
-  }
+ 
 }
 
 @layer base {

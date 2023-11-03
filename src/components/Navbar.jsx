@@ -1,53 +1,109 @@
-import  { useState } from 'react'
-import { Link } from 'react-scroll';
-import {BsBellFill, BsFillCartFill} from "react-icons/bs";
-import {GiHamburgerMenu} from "react-icons/gi";
-import {AiOutlineCloseCircle} from "react-icons/ai"
+import {Flex, Image, Show, Hide, Box, useDisclosure, useColorMode, Collapse, Button} from '@chakra-ui/react'
+import { Links } from './Components'
+import { FiMenu } from 'react-icons/fi'
+
 
 const Navbar = () => {
- 
-   const [open, setOpen] = useState(false);
-
-   const openMenu = () => {
-    setOpen(!open)
-   }
-
+    const { isOpen, onToggle } = useDisclosure()
+    const {colorMode} = useColorMode()
   return (
-    <nav className="overflow-x-hidden container">
-     <div className='flex justify-between p-4 w-full whitespace-nowrap relative'>
-      <div className='py-6 lg:text-primary'>
-       <p className= "font-semibold">Food Call</p>
-      </div>
-  {/* menu icons */}
-        <div
-          onClick={openMenu} 
-          className='py-6 left-[16rem] absolute lg:hidden text-primary transition-all duration-700  cursor-pointer text-xl'>
-          {open ? <AiOutlineCloseCircle />  : <GiHamburgerMenu />}
-        </div>
-  {/* menu items */}
-       <div className={`flex flex-col lg:flex-row items-center lg:justify-between lg:my-0 my-14 space-y-8 lg:space-y-0 lg:static bg-secondary lg:bg-inherit p-10 lg:p-0 transition-all ease-in duration-700 ${open ? '' : 'mx-[88rem] lg:mx-0' } `} >
-          <div className='flex flex-col lg:flex-row items-center space-x-8 lg:-mx-[62rem] space-y-8 lg:space-y-0'>
-            <Link id='line'  className='text-primary cursor-pointer'>Menu</Link>
-            <Link id='line'  className='text-textColor cursor-pointer hover:text-primary'>Reservations</Link>
-            <Link id='line'  className='text-textColor cursor-pointer hover:text-primary'>Call Chef</Link>
+    <Flex  justifyContent={'space-between'} gap={{ base: 3,}} p={4}
+    direction={{ base: 'column', md: 'row' }}>
+      {/* logo */}
+      <Flex alignItems={'center'} justifyContent={{base:'space-between'}} gap={2} mb={{base:4, md:0}}>
+         {colorMode === 'dark' ? 
+           <>
+            <Box>
+             <Image 
+             cursor={'pointer'}
+             src='/Images/logo.png'
+             alt='logo'
+             w={{base:'5rem', md:'6rem'}}/> 
+            </Box>
+            <Hide above='lg'>
+            <div>
+             <Button bg={'orange.10'} w={'9rem'} rounded={'full'} _hover={''} className='hover:bg-gray-100 hover:text-black transition-all ease-in-out duration-300'>Download App</Button>
+            </div>
+            </Hide>
+            <Box >
+            <Hide above='md'>
+             <Box p={2}>
+              <FiMenu className='cursor-pointer text-4xl text-white transition-all ease-in-out duration-300' onClick={onToggle}/>
+            </Box>
+            </Hide> 
+           </Box>
+          </>
+          :
+          <>
+            <Box>
+             <Image 
+             cursor={'pointer'}
+             src='/Images/Logo-Dark.png'
+             alt='logo'
+             w={{base:'5rem', md:'6.7rem'}}/> 
+            </Box>
+            <Hide above='lg'>
+            <div>
+             <Button bg={'orange.10'} w={'9rem'} color={'whiteAlpha.900'} rounded={'full'} _hover={''} className='hover:bg-orange-600 transition-all ease-in-out duration-300'>Download App</Button>
+            </div>
+            </Hide>
+            <Box>
+            <Hide above='md'>
+             <Box p={2}>
+              <FiMenu className='cursor-pointer text-4xl text-black transition-all ease-in-out duration-300 mx-2' onClick={onToggle}/>
+            </Box>
+            </Hide>
+            
+            </Box>
+          </>
+         }
+      </Flex>
+       
+       {colorMode === 'dark' ?
+       <Collapse in={isOpen}  transition={{exit: {delay: 1}, enter: {duration: 0.3}}}>
+            <Hide above='md'>
+               <Box color={'black'} w={'38rem'} rounded={'md'}  bg={'whiteAlpha.900'} p={4}>
+                <Links/>
+               </Box>
+           </Hide> 
+        </Collapse>
+        :
+        <Collapse in={isOpen}  transition={{exit: {delay: 1}, enter: {duration: 0.3}}}>
+            <Hide above='md'>
+               <Box color={'whiteAlpha.800'} w={'38rem'} rounded={'md'} bg={'gray.dark'} p={4} >
+                <Links/>
+               </Box>
+           </Hide> 
+        </Collapse>
+       }
+        
+          {colorMode === 'dark' ? 
+          <div className='mx-[12rem] lg:flex items-center space-x-7' id='line'>
+          <Box color={'whiteAlpha.900'}>
+          <Show above='md'>
+            <Links />
+          </Show>
+          </Box>
+          <Show above='md'>
+             <div>
+             <Button bg={'orange.10'} w={'9rem'} rounded={'full'} _hover={''} className='hover:bg-gray-100 hover:text-black transition-all ease-in-out duration-300'>Download App</Button>
+            </div>
+          </Show>
           </div>
-    {/* button and icons */}
-          <div className='flex items-center space-x-4 lg:-mx-[rem] '>
-            <button className='btn hover:bg-orange-700'>Login</button>
-    {/* icon and notification circle made with a div and the the position property */}
-             <div className='flex items-center relative'>
-              <BsBellFill className='cursor-pointer'/>
-             <div className='text-[12px] text-white bg-primary rounded-full w-4 h-4 absolute left-2 bottom-3 '> <p className='px-1 -mt-[0.4rem]'>3</p></div>
-             </div>
-             <div className='flex items-center relative'>
-              <BsFillCartFill className='cursor-pointer'/>
-             <div className='text-[12px] text-white bg-primary rounded-full w-4 h-4 absolute left-2 bottom-3 '> <p className='px-1 -mt-[0.4rem]'>2</p></div>
-             </div>
+            :
+          <div className='mx-[12rem] lg:flex items-center space-x-7'>
+          <Show above='md'>
+            <Links />
+          </Show>
+          <Show above='md'>
+           <div>
+             <Button bg={'orange.10'} w={'9rem'} color={'whiteAlpha.900'} rounded={'full'} _hover={''} className='hover:bg-orange-600 transition-all ease-in-out duration-300'>Download App</Button>
+            </div> 
+          </Show>
           </div>
-        </div>
-      </div>
-    </nav>
-    
+          }  
+        
+    </Flex>
   )
 }
 

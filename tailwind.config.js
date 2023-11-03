@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default{
   content: [
     "./index.html",
     './src/**/*.{js,jsx,ts,tsx}',],
@@ -25,9 +25,6 @@ module.exports = {
         primary:'#F23C17',
         secondary: '#FEE9DE'
       },
-    },
-    backgroundImage: {
-      site: "url('./assets/Circle.png')"
     },
   },
   plugins: [],
