@@ -22,12 +22,12 @@ const Navbar = () => {
             </Box>
             <Hide above='lg'>
             <div>
-             <Button bg={'orange.10'} w={'9rem'} rounded={'full'} _hover={''} className='hover:bg-gray-100 hover:text-black transition-all ease-in-out duration-300'>Download App</Button>
+             <Button bg={'orange.10'} w={{sm:'9rem', base:'7.5rem'}} rounded={'full'} _hover={''} className='hover:bg-gray-100 hover:text-black transition-all ease-in-out duration-300 '>Download App</Button>
             </div>
             </Hide>
             <Box >
             <Hide above='md'>
-             <Box p={2}>
+             <Box p={1}>
               <FiMenu className='cursor-pointer text-4xl text-white transition-all ease-in-out duration-300' onClick={onToggle}/>
             </Box>
             </Hide> 
@@ -44,12 +44,12 @@ const Navbar = () => {
             </Box>
             <Hide above='lg'>
             <div>
-             <Button bg={'orange.10'} w={'9rem'} color={'whiteAlpha.900'} rounded={'full'} _hover={''} className='hover:bg-orange-600 transition-all ease-in-out duration-300'>Download App</Button>
+             <Button bg={'orange.10'} w={{sm:'9rem',base:'7.5rem'}} color={'whiteAlpha.900'} rounded={'full'} _hover={''} className='hover:bg-orange-600 transition-all ease-in-out duration-300'>Download App</Button>
             </div>
             </Hide>
             <Box>
             <Hide above='md'>
-             <Box p={2}>
+             <Box p={1}>
               <FiMenu className='cursor-pointer text-4xl text-black transition-all ease-in-out duration-300 mx-2' onClick={onToggle}/>
             </Box>
             </Hide>
