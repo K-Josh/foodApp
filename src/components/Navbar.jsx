@@ -7,10 +7,10 @@ const Navbar = () => {
     const { isOpen, onToggle } = useDisclosure()
     const {colorMode} = useColorMode()
   return (
-    <Flex  justifyContent={'space-between'} gap={{ base: 3,}} p={4}
+    <Flex  justifyContent={'space-between'} gap={{base: 1,}} p={3}
     direction={{ base: 'column', md: 'row' }}>
       {/* logo */}
-      <Flex alignItems={'center'} justifyContent={{base:'space-between'}} gap={2} mb={{base:4, md:0}}>
+      <Flex alignItems={'center'} justifyContent={{base:'space-between'}} mb={{base:4, md:0}}>
          {colorMode === 'dark' ? 
            <>
             <Box>
