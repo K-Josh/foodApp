@@ -62,7 +62,7 @@ const Navbar = () => {
        {colorMode === 'dark' ?
        <Collapse in={isOpen}  transition={{exit: {delay: 1}, enter: {duration: 0.3}}}>
             <Hide above='md'>
-               <Box color={'black'} w={'38rem'} rounded={'md'}  bg={'whiteAlpha.900'} p={4}>
+               <Box color={'black'} w={{sm:'37rem',base:'19rem',md:'38rem'}} rounded={'md'}  bg={'whiteAlpha.900'} p={4}>
                 <Links/>
                </Box>
            </Hide> 
@@ -70,7 +70,7 @@ const Navbar = () => {
         :
         <Collapse in={isOpen}  transition={{exit: {delay: 1}, enter: {duration: 0.3}}}>
             <Hide above='md'>
-               <Box color={'whiteAlpha.800'} w={'38rem'} rounded={'md'} bg={'gray.dark'} p={4} >
+               <Box color={'whiteAlpha.800'} w={{sm:'37rem',base:'19rem',md:'38rem'}} rounded={'md'} bg={'gray.dark'} p={4} >
                 <Links/>
                </Box>
            </Hide> 
@@ -86,7 +86,7 @@ const Navbar = () => {
           </Box>
           <Show above='md'>
              <div>
-             <Button bg={'orange.10'} w={'9rem'} rounded={'full'} _hover={''} className='hover:bg-gray-100 hover:text-black transition-all ease-in-out duration-300'>Download App</Button>
+             <Button bg={'orange.10'} w={{sm:'9rem',base:'2px'}} rounded={'full'} _hover={''} className='hover:bg-gray-100 hover:text-black transition-all ease-in-out duration-300'>Download App</Button>
             </div>
           </Show>
           </div>

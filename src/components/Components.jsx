@@ -14,10 +14,10 @@
             md:'row'
          }}
          >
-            <Link className='cursor-pointer font-bold'>Today Special Offers</Link>
-           <Link  className='cursor-pointer font-bold'>Why FoodHut</Link>
-           <Link  className='cursor-pointer font-bold'>Our Menu</Link>
-           <Link className='cursor-pointer font-bold'>Our Popular Food</Link>
+            <Link to='#' className='cursor-pointer font-bold'>Today Special Offers</Link>
+           <Link to='#' className='cursor-pointer font-bold'>Why FoodHut</Link>
+           <Link to='#' className='cursor-pointer font-bold'>Our Menu</Link>
+           <Link to='#' className='cursor-pointer font-bold'>Our Popular Food</Link>
        </Flex>   
      </div>
     )
