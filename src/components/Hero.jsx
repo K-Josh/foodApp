@@ -40,7 +40,7 @@ const Carousel = () => {
             />
 
             <Flex>
-              <Box bg={'whiteAlpha.900'} w={{base:'8rem',sm:'10rem'}} h={{sm:'3.8rem',base:'3.5rem'}} p={1} rounded={'lg'} position={'absolute'} left={{base:'-2rem',sm:'-8rem', md:''}} top={{sm:'4rem',base:'2rem',md:''}}  className="cursor-pointer hover:scale-110 transition-all ease-in duration-500  ">
+              <Box bg={'whiteAlpha.900'} w={{base:'8rem',sm:'10rem'}} h={{sm:'3.8rem',base:'3.5rem'}} p={1} rounded={'lg'} position={'absolute'} left={{base:'-1.3rem',sm:'-8rem', md:''}} top={{sm:'4rem',base:'5rem',md:''}}  className="cursor-pointer hover:scale-110 transition-all ease-in duration-500  ">
                 <Flex className="md:space-x-4 space-x-2">
                  <Image 
                   src="/Images/pizza.png"
@@ -89,8 +89,44 @@ const Carousel = () => {
             w={{sm:'100%',base:'90%', md:'100%'}}
             h={{base:'22rem', md:'25rem'}}
             position={'absolute'}
-             top={{base:'3rem', md:'1rem'}} left={{sm:'-0rem',base:'1rem', md:'-'}}
+             top={{base:'4rem', md:'1rem'}} left={{sm:'-0rem',base:'1rem', md:'-'}}
            />
+           </Box>
+           <Box>
+             <Flex>
+               <Image 
+                src="/Images/plate_1.png"
+                alt="food"
+                w={{sm:'7rem',base:'6rem'}}
+                position={'absolute'}
+                top={{sm:'14rem',base:'17rem'}}
+                right={{sm:'19rem',base:'17.6rem'}}
+               />
+               <Image 
+                src="/Images/plate_2.png"
+                alt="food"
+                w={{sm:'6.4rem',base:'5rem'}}
+                position={'absolute'}
+                top={{sm:'20rem',base:'21.2rem'}}
+                right={{sm:'13rem',base:'12.7rem'}}
+               />
+               <Image 
+                src="/Images/plate_3.png"
+                alt="food"
+                w={{sm:'6.5rem',base:'5rem'}}
+                position={'absolute'}
+                top={{sm:'14rem',base:'18rem'}}
+                right={{sm:'-1rem',base:'2rem'}}
+               />
+               <Image 
+                src="/Images/plate_4.png"
+                alt="food"
+                w={{sm:'5.8rem',base:'5rem'}}
+                position={'absolute'}
+                top={{sm:'20.5rem',base:'21.2rem'}}
+                right={{sm:'4rem',base:'6rem'}}
+               />
+             </Flex>
            </Box>
          </Box>
        </Flex>
