@@ -22,8 +22,9 @@ export default{
     extend: {
       colors: {
         textColor: "#000",
-        primary:'#F23C17',
-        secondary: '#FEE9DE'
+        yellow:'#FDC55E',
+        orange: '#F54748',
+        linear:'#F54748'
       },
     },
   },

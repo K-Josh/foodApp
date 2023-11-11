@@ -40,7 +40,6 @@ width: 100vw;
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
-  transformation: scale(0.5);
   transition: 0.5s ease-in-out;
 }
 .carousel_card-active{
@@ -69,7 +68,7 @@ width: 100vw;
     @apply relative;
   }
   #line::after {
-    @apply content-[''] absolute bg-orange-600 h-[1px] w-[0%]
+    @apply content-[''] absolute bg-orange h-[1px] w-[0%]
   left-0 -bottom-[2px] rounded-lg duration-300;
   }
  

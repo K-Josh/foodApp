@@ -85,7 +85,7 @@ const Navbar = () => {
           </Show>
           </Box>
           <Show above='md'>
-             <div>
+            <div>
              <Button bg={'orange.10'} w={{sm:'9rem',base:'2px'}} rounded={'full'} _hover={''} className='hover:bg-gray-100 hover:text-black transition-all ease-in-out duration-300'>Download App</Button>
             </div>
           </Show>
