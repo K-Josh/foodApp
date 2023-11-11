@@ -10,7 +10,7 @@ import Service from './components/Service';
 
 const App = () => {
   return (
-    <Container theme={theme} maxW={'2xl'}>
+    <Container theme={theme} maxW={'xl'}>
       <Navbar />
       <Carousel/>
        <Offers/>
