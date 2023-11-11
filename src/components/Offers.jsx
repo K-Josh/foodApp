@@ -3,17 +3,8 @@ import { Cards, HeadingTwo } from "./Components"
 // import Slider from 'react-slick';
 // import { useState } from "react";
 
-// const settings = {
-//   dots: true,
-//   arrows: false,
-//   fade: true,
-//   infinite:true,
-//   autoplay:true,
-//   speed:500,
-//   autoplaySpeed: 5000,
-//   slidesToShow: 3,
-//   slidesToScroll: 3
-// }
+
+
 
 const Offers = () => {
   // const [slider, setSlider] = useState<Slider | null
@@ -32,9 +23,9 @@ const Offers = () => {
        <Show above="md">
          <HeadingTwo />
        </Show>
-       <div className="lg:hidden">
+       <Box ml={{base:'2rem',sm:'0rem'}} className="lg:hidden">
          <HeadingTwo />
-       </div>
+       </Box>
       </Flex>
      </Box>
      <div className="">

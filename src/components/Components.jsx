@@ -4,7 +4,7 @@ import { FaChevronDown, FaSearch } from 'react-icons/fa'
  import {Link} from 'react-scroll'
  import { AiFillStar } from "react-icons/ai"
 import { foodOffers } from '../Data/Data'
- 
+
  
  // links
  export const Links = () => {
@@ -26,7 +26,7 @@ import { foodOffers } from '../Data/Data'
 export const HeadingOne = () => {
     const {colorMode} = useColorMode()
  return (
-    <Flex direction={'column'} px={{base:''}} className='space-y-3 relative'>
+    <Flex direction={'column'} alignItems={{base:'center',sm:'start'}} px={{base:''}} className='space-y-3 relative'>
      {colorMode === 'dark' ? 
       <>
      <Text w={{sm:'479px',base:'379px',md:'530px'}}>
@@ -41,7 +41,7 @@ export const HeadingOne = () => {
             right={{sm:'2rem',base:'10rem',md:'-3rem'}}
          />
      </Text>
-      <Text w={{base:'379px',md:'517px'}} px={{base:'10px'}} fontSize={{base:'17px',md:'25px'}} color={'white'}>
+      <Text w={{base:'370px',sm:'379px',md:'517px'}} px={{base:'10px'}} fontSize={{base:'17px',md:'25px'}} color={'white'}>
        Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60 minutes.
       </Text> 
       </>
@@ -59,7 +59,7 @@ export const HeadingOne = () => {
             right={{sm:'2rem',base:'10rem',md:'-3rem'}}
          />
      </Text>
-      <Text w={{base:'379px',md:'517px'}} px={{base:'10px'}} fontSize={{base:'17px',md:'24px'}}>
+      <Text w={{base:'370px',sm:'379px',md:'517px'}} px={{base:'10px'}} fontSize={{base:'17px',md:'24px'}}>
        Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60 minutes.
       </Text>
       </>}
@@ -69,7 +69,7 @@ export const HeadingOne = () => {
        <Input 
        type='search'
        rounded={'full'}
-       w={{sm:'25rem',base:'18.5rem',md:'28rem'}}
+       w={{sm:'23rem',base:'18.5rem',md:'28rem'}}
        h={'3rem'}
        px={12}
        border={'1px'}
@@ -78,7 +78,9 @@ export const HeadingOne = () => {
        placeholder='Search for food'
        className='placeholder:p-1 cursor-pointer'
       />  
-      <span className='text-xl bg-yellow rounded-full p-2 absolute lg:right-[5.4rem] right-[5rem] '><FaSearch /></span> 
+      <Box position={'relative'} rounded={'full'} bg={'yellow.10'} boxSize={{base:'2.4rem',sm:'2.3rem',md:''}} px={2} py={2} right={{base:'3rem',sm:'3rem',md:'5.4rem'}}>
+       <span className='text-xl'><FaSearch /></span>
+      </Box> 
       </Box> : 
       <Box px={{base:'12px'}} className='flex items-center relative'>
       <span className='text-xl absolute left-[2rem]'><FaSearch /></span> 
@@ -94,7 +96,9 @@ export const HeadingOne = () => {
        placeholder='Search for food'
        className='placeholder:p-1 cursor-pointer'
       />  
-      <span className='text-xl bg-yellow rounded-full p-2 absolute lg:right-[5.4rem] right-[5rem] '><FaSearch /></span> 
+      <Box position={'relative'} rounded={'full'} bg={'yellow.10'} boxSize={{base:'2.4rem',sm:'2.3rem',md:''}} px={2} py={2} right={{base:'3rem',sm:'3rem',md:'5.4rem'}}>
+       <span className='text-xl'><FaSearch /></span>
+      </Box> 
       </Box>
       }
     </Flex>
@@ -112,7 +116,7 @@ export const HeadingTwo = () => {
          Today <span className='text-orange'>Special</span> Offers
           </h1>
         </Text> 
-          <Text color={'white'} w={{base:'372px',sm:'424px', md:'840px'}} textAlign={'center'} className='text-[18px] lg:text-[24px] ml-[11rem] lg:ml-[9rem]'>
+          <Text color={'white'} w={{base:'312px',sm:'424px', md:'840px'}} textAlign={'center'} className='text-[18px] lg:text-[24px] ml-[9rem] lg:ml-[9rem]'>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s
           </Text>
         </Box>:
@@ -122,7 +126,7 @@ export const HeadingTwo = () => {
         Today <span className='text-orange'>Special</span> Offers
         </h1>
           </Text>
-        <Text color={'blackAlpha.800'} w={{base:'372px',sm:'424px', md:'856px'}} textAlign={'center'} className='text-[18px] lg:text-[24px] ml-[11rem] lg:ml-[9rem]'>
+        <Text color={'blackAlpha.800'} w={{base:'312px',sm:'424px', md:'856px'}} textAlign={'center'} className='text-[18px] lg:text-[24px] ml-[9rem] lg:ml-[9rem]'>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s
         </Text>
           </Box>
@@ -254,7 +258,7 @@ export const Cards = () => {
          </>
         : 
         <>
-         <Box className="group-hover:scale-90 transition-all ease-out duration-500 cursor-pointer" justifyContent={'center'} alignItems={'center'}>
+         <Box className="transition-all ease-out duration-500 cursor-pointer" justifyContent={'center'} alignItems={'center'}>
 
         <Flex justifyContent={'center'} alignItems={'center'} direction={'row'} gap={{base:1,md:5}}  mt={{md:'-8rem'}}>
       {foodOffers.map((item, index)=> (
@@ -262,21 +266,21 @@ export const Cards = () => {
        <VStack className=' '>
         <Box position={'relative'}  className=' cursor-pointer shadow-sm overflow-hidden transition-all duration-500'>
          {/* image */}
-         <Box position={'relative'} top={{base:'',sm:'7rem',md:'7rem'}} right={{base:'',sm:'-2.5rem',md:'-1.4rem'}}>
+         <Box position={'relative'} top={{base:'6rem',sm:'7rem',md:'7rem'}} right={{base:'-2.6rem',sm:'-2.5rem',md:'-1.4rem'}}>
          <Image 
             src={item.image}
             alt={item.name}
-            w={{base:'13rem',sm:198,md:'17rem'}}
-            h={{base:'13rem',sm:207,md:'17rem'}}  
+            w={{base:'12rem',sm:198,md:'17rem'}}
+            h={{base:'12rem',sm:207,md:'17rem'}}  
            />
          </Box>
           <Box>
-           <Box bgGradient={'linear(to-b,#ffff 0%,#F62F30 100%)'} className=" opacity-10" mt={{md:'-2rem'}} w={{base:'12rem',sm:'18rem',md:'20rem'}} h={{base:'17rem',sm:'22rem',md:'27rem'}} rounded={'xl'}>
+           <Box bgGradient={'linear(to-b,#ffff 0%,#F62F30 100%)'} className=" opacity-10" mt={{md:'-2rem'}} w={{base:'18rem',md:'20rem'}} h={{base:'19rem',sm:'22rem',md:'27rem'}} rounded={'xl'}>
            </Box>
           </Box>
     {/* avatar and ratings were put in one box and postion relative used */}
           <Flex justifyContent={'center'}>
-           <Box className="flex items-center justify-center space-x-5" mt={{base:'16rem',sm:'-29rem',md:'-35rem'}} left={{base:'',sm:'4.5rem',md:'5rem'}} position={'relative'}>
+          <Box className="flex items-center justify-center space-x-5" mt={{base:'-24rem',sm:'-29rem',md:'-35rem'}} left={{base:'3rem',sm:'4.5rem',md:'5rem'}} position={'relative'}>
            <Image 
           src={item.avatar}
           w={12}
@@ -285,16 +289,16 @@ export const Cards = () => {
         />
         <Text className="flex items-center space-x-3">
           <span className="font-bold"><AiFillStar className="text-yellow text-[20px] lg:text-[22px]"/></span>
-          <span className="font-bold text-black">{item.rating}</span>
+          <span className="font-bold text-white">{item.rating}</span>
         </Text>
          </Box>
-         <Box className="flex items-center justify-center space-x-5 absolute" mt={{base:'19rem',sm:'-11rem',md:'-13rem'}} left={{base:'',sm:'4rem',md:'2.3rem'}}>
+         <Box className="flex items-center justify-center space-x-5 absolute" mt={{base:'-10rem',sm:'-11rem',md:'-13rem'}} left={{base:'',sm:'4rem',md:'2.3rem'}}>
          <Text textAlign={'center'} className="space-y-2 lg:space-y-1">
-          <h1 className="text-orange font-bold">{item.food}</h1>
+          <Text className="text-orange font-bold">{item.food}</Text>
           <Text w={{base:169,md:253}} className="text-[13px] font-semibold lg:text-[20px]">{item.text}</Text>
          </Text>
          </Box>
-         <Box mt={{base:'26rem',sm:'-1.5rem',md:'-2rem'}} left={{base:'',sm:'-4rem',md:'-4.5rem'}} position={'relative'}>
+         <Box mt={{base:'-1rem',sm:'-1.5rem',md:'-2rem'}} left={{base:'-4.3rem',sm:'-4rem',md:'-4.5rem'}} position={'relative'}>
           <ButtonOffers />
          </Box>
          </Flex>

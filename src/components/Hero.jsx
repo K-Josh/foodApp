@@ -9,12 +9,12 @@ const Carousel = () => {
   <div className="min-h-screen">
    <Flex direction={{base:'column', md:'row'}} alignItems={{sm:'center',base:'center',md:'inherit'}} margin={{md:'2rem'}} justifyContent={'center'} mt={{base:'4rem',md:'4rem'}} >
         <Flex className="lg:space-x-[16rem] lg:max-w-screen lg:my-12" justifyContent={'center'} >
-        <div className="lg:mt-[3rem] lg:space-y-5 "> 
+        <Box className="lg:mt-[3rem] lg:space-y-5 "> 
           <Show above="md">
              <HeadingOne />
              <ButtonHero/>
            </Show>
-          </div>
+          </Box>
          <div className="relative ">
           <Box>
             <Flex>
@@ -121,7 +121,7 @@ const Carousel = () => {
                 w={{sm:'7rem',base:'6rem',md:'9rem'}}
                 position={'absolute'}
                 top={{sm:'14rem',base:'17rem',md:'20rem'}}
-                right={{sm:'19rem',base:'17.6rem',md:'23rem'}}
+                right={{sm:'19rem',base:'17rem',md:'23rem'}}
                />
                <Image 
                 src="/Images/plate_2.png"
@@ -155,13 +155,13 @@ const Carousel = () => {
 
           <Box my={{sm:'30rem',base:'30.3rem', md:'-2rem'}}>
              <Flex alignItems={'center'} gap={{sm:'22rem',base:'8rem'}} px={3}>
-              <div className="lg:hidden">
+              <Box ml={{base:'2rem',sm:''}} className="lg:hidden">
               <Button size={{sm:'md',base:'sm'}} gap={2} rounded={'full'} bg={'pink.100'} >
                 <span className="w-7 h-7 bg-red-600 rounded-full ">
                   <FaHeart className="text-yellow m-1 text-center text-[1.3rem]"/>
                 </span>
                 <span className="text-black text-xs md:text-sm">People Trust us</span></Button>
-              </div>
+              </Box>
               <div className="lg:hidden -rotate-[60deg] ">
                <Image 
                  src="/Images/Orange.png"
@@ -171,11 +171,16 @@ const Carousel = () => {
                  />
               </div>
              </Flex>
+    {/* heading and input text on smaller screens */}
              <Flex>
-               <div className="lg:hidden space-y-3">
+               <Box alignItems={{base:'center'}} className="lg:hidden space-y-3">
+                <Box ml={{base:'2rem',sm:'0rem'}}>
                 <HeadingOne />
-                <ButtonHero/>
-               </div>
+                </Box>
+                 <Box ml={{base:'2rem',sm:'0rem'}}>
+                  <ButtonHero/>
+                 </Box>
+               </Box>
              </Flex>
           </Box>
         </Flex>
