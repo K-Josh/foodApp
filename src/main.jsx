@@ -5,6 +5,7 @@ import { ChakraProvider, extendTheme, ColorModeScript } from "@chakra-ui/react"
 import { mode } from '@chakra-ui/theme-tools'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
+import 'swiper/swiper-bundle.css';
 
 const styles={
   global:(props)=>({
@@ -64,15 +65,14 @@ const colors={
     10:'#FDC55E'
   },
   linear:{
-    10:'#FFC26B',
-  }
+    10:'#FFC26B', 
+ }
 }
 const breakpoints = {
-  sm: '30em',
-  md: '48em',
-  lg: '62em',
-  xl: '80em',
-  '2xl': '96em',
+  sm: '640px',
+  md: '768px',
+  lg: '960px',
+  xl: '1200px',
 }
 const theme = extendTheme({config, colors, styles, breakpoints})
 

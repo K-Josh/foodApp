@@ -62,7 +62,7 @@ const Navbar = () => {
        {colorMode === 'dark' ?
        <Collapse in={isOpen}  transition={{exit: {delay: 1}, enter: {duration: 0.3}}}>
             <Hide above='md'>
-               <Box color={'black'} w={{sm:'37rem',base:'19rem',md:'38rem'}} rounded={'md'}  bg={'whiteAlpha.900'} p={4}>
+               <Box color={'black'} w={{sm:'37rem',base:'29.4rem',md:'38rem'}} rounded={'md'}  bg={'whiteAlpha.900'} p={4}>
                 <Links/>
                </Box>
            </Hide> 
@@ -70,7 +70,7 @@ const Navbar = () => {
         :
         <Collapse in={isOpen}  transition={{exit: {delay: 1}, enter: {duration: 0.3}}}>
             <Hide above='md'>
-               <Box color={'whiteAlpha.800'} w={{sm:'37rem',base:'19rem',md:'38rem'}} rounded={'md'} bg={'gray.dark'} p={4} >
+               <Box color={'whiteAlpha.800'} w={{sm:'37rem',base:'29.4rem',md:'38rem'}} rounded={'md'} bg={'gray.dark'} p={4} >
                 <Links/>
                </Box>
            </Hide> 
@@ -79,26 +79,28 @@ const Navbar = () => {
         
           {colorMode === 'dark' ? 
           <div className='mx-[12rem] lg:flex items-center space-x-7' id='line'>
-          <Box color={'whiteAlpha.900'}>
+          <Box color={'whiteAlpha.900'} mr={{md:'-1rem'}}>
           <Show above='md'>
             <Links />
           </Show>
           </Box>
           <Show above='md'>
-            <div>
-             <Button bg={'orange.10'} w={{sm:'9rem',base:'2px'}} rounded={'full'} _hover={''} className='hover:bg-gray-100 hover:text-black transition-all ease-in-out duration-300'>Download App</Button>
-            </div>
+            <Box>
+             <Button bg={'orange.10'} w={{sm:'9rem',base:'2px'}} rounded={'full'} _hover={''} mr={{md:'-4rem'}} className='hover:bg-gray-100 hover:text-black transition-all ease-in-out duration-300'>Download App</Button>
+            </Box>
           </Show>
           </div>
             :
           <div className='mx-[12rem] lg:flex items-center space-x-7'>
-          <Show above='md'>
+          <Box mr={{md:'-1rem'}}>
+           <Show above='md'>
             <Links />
           </Show>
+          </Box>
           <Show above='md'>
-           <div>
-             <Button bg={'orange.10'} w={'9rem'} color={'whiteAlpha.900'} rounded={'full'} _hover={''} className='hover:bg-orange-600 transition-all ease-in-out duration-300'>Download App</Button>
-            </div> 
+           <Box >
+             <Button bg={'orange.10'} w={'9rem'} color={'whiteAlpha.900'} rounded={'full'} mr={{md:'3rem'}} _hover={''} className='hover:bg-orange-600 transition-all ease-in-out duration-300'>Download App</Button>
+            </Box> 
           </Show>
           </div>
           }  

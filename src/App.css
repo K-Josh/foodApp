@@ -35,10 +35,7 @@ width: 100vw;
 /* carousel */
 .carousel_card {
   display: flex;
-  flex: 1;
-  position: absolute;
   overflow: hidden;
-  opacity: 0;
   pointer-events: none;
   transition: 0.5s ease-in-out;
 }
@@ -53,15 +50,13 @@ width: 100vw;
  transform:translate(-50%, 0)
 }
 .pagination-dot {
-  background-color: #2F2F2FE5;
+  background-color: #F23C17;
   cursor: pointer;
 }
 .pagination-dot:hover {
   transform: scale(1.2);
 }
-.pagination_active {
-  background-color: #F23C17;
-}
+
 
 @layer utilities {
   #line {

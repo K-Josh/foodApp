@@ -7,9 +7,9 @@ import { ButtonHero, HeadingOne, SmallCircles } from "./Components";
 const Carousel = () => {
   return (
   <div className="min-h-screen">
-   <Flex direction={{base:'column', md:'row'}} alignItems={{sm:'center',base:'center',md:'inherit'}} margin={{md:'2rem'}} justifyContent={'center'} mt={{base:'4rem',md:'4rem'}} >
-        <Flex className="lg:space-x-[16rem] lg:max-w-screen lg:my-12" justifyContent={'center'} >
-        <Box className="lg:mt-[3rem] lg:space-y-5 "> 
+   <Flex direction={{base:'column', md:'row'}} alignItems={{sm:'center',base:'center',md:'inherit'}} margin={{md:'3rem'}} justifyContent={'center'} mt={{base:'4rem',md:'4rem'}} >
+        <Flex className="lg:space-x-[2rem] lg:my-1" justifyContent={'center'} >
+        <Box className="lg:mt-[2rem] lg:space-y-5 "> 
           <Show above="md">
              <HeadingOne />
              <ButtonHero/>
@@ -18,18 +18,18 @@ const Carousel = () => {
          <div className="relative ">
           <Box>
             <Flex>
-              <Box position={'absolute'} left={{sm:'28.2rem',base:'20.6rem',md:'30.3rem'}} top={{sm:'-4rem', base:'-3rem',md:'-5rem'}} color={'orange.10'}><FaLocationArrow className="transition-all ease-in-out duration-300 -rotate-[45deg] lg:-rotate-[80deg]"/></Box>
+              <Box position={'absolute'} left={{sm:'28.2rem',base:'20.6rem',md:'28.3rem'}} top={{sm:'-4rem', base:'-3rem',md:'-3rem'}} color={'orange.10'}><FaLocationArrow className="transition-all ease-in-out duration-300 -rotate-[45deg] lg:-rotate-[80deg]"/></Box>
                <Image 
                 src="/Images/upward_Arrow.png"
                 alt="arrow"
                 position={'absolute'}
                 w={{sm:'8.3rem',base:'4rem'}}
-                left={{sm:'20rem',base:'17rem',md:'27rem'}} top={{sm:'-4rem',base:'-3rem'}}
+                left={{sm:'20rem',base:'17rem',md:'25rem'}} top={{sm:'-4rem',base:'-3rem',md:'-2rem'}}
                 className="lg:rotate-[0deg] md:rotate-[380deg] rotate-[25deg] "
                />
         {/*Lady  */}
-          <Box bg={'orange.10'} w={{sm:'20.1rem',base:'17.2rem', md:'26rem'}} h={{sm:'19rem',base:'17.2rem', md:'26rem'}}  rounded={'full'} position={'absolute'} top={{sm:'2rem',base:'4rem', md:''}} right={{sm:'1.9rem',base:'3.7rem',md:'3rem'}}>
-           <Box position={'absolute'} bottom={{sm:'23rem',base:'20rem', md:'31rem'}} right={{sm:'9rem',base:'7.8rem',md:'12rem'}}>
+          <Box bg={'orange.10'} w={{sm:'20.1rem',base:'17.2rem', md:'22rem'}} h={{sm:'19rem',base:'17.2rem', md:'22rem'}}  rounded={'full'} position={'absolute'} top={{sm:'2rem',base:'4rem', md:'3rem'}} right={{sm:'1.9rem',base:'3.7rem',md:'3rem'}}>
+           <Box position={'absolute'} bottom={{sm:'23rem',base:'20rem', md:'28rem'}} right={{sm:'9rem',base:'7.8rem',md:'10rem'}}>
            🔥
            </Box>
            <Image 
@@ -37,7 +37,7 @@ const Carousel = () => {
              alt="leaf"
              position={'absolute'}
              w={{sm:'8rem',base:'5.7rem',md:''}}
-             left={{sm:'13rem',base:'12.4rem', md:'18rem'}}
+             left={{sm:'13rem',base:'12.4rem', md:'15rem'}}
              top={{sm:"-5rem",base:'-3px',md:''}}
            />
            <Image 
@@ -53,9 +53,9 @@ const Carousel = () => {
              alt="satisfied-lady"
              rounded={'full'}
              w={{sm:'19.3rem',base:'16.5rem', md:'29rem'}}
-             h={{sm:'24rem',base:'21rem', md:'30.8rem'}}
+             h={{sm:'24rem',base:'21rem', md:'28rem'}}
              position={'absolute'}
-             top={{sm:'-4.1rem',base:'-3rem', md:'-4.9rem'}} right={{sm:'6px',base:'4px', md:'1px'}}
+             top={{sm:'-4.1rem',base:'-3rem', md:'-5.8rem'}} right={{sm:'6px',base:'4px', md:'1px'}}
             />
 
             <Flex>
@@ -106,10 +106,10 @@ const Carousel = () => {
            <Box w={{base:'24rem',md:'32rem'}}>
             <Image 
             src="/Images/ellipse.png"
-            w={{sm:'100%',base:'90%', md:'100%'}}
+            w={{sm:'100%',base:'90%', md:'90%'}}
             h={{base:'22rem', md:'25rem'}}
             position={'absolute'}
-            top={{base:'4rem', md:'6.5rem'}} left={{sm:'-0rem',base:'1rem', md:'0.1rem'}}
+            top={{base:'4rem', md:'3rem'}} left={{sm:'-0rem',base:'1rem', md:'3rem'}}
            />
            </Box>
  {/* plates of food we set a defined w and height for all viewports */}
@@ -118,34 +118,34 @@ const Carousel = () => {
                <Image 
                 src="/Images/plate_1.png"
                 alt="food"
-                w={{sm:'7rem',base:'6rem',md:'9rem'}}
+                w={{sm:'7rem',base:'6rem',md:'8rem'}}
                 position={'absolute'}
-                top={{sm:'14rem',base:'17rem',md:'20rem'}}
-                right={{sm:'19rem',base:'17rem',md:'23rem'}}
+                top={{sm:'14rem',base:'17rem',md:'17rem'}}
+                right={{sm:'19rem',base:'17rem',md:'21rem'}}
                />
                <Image 
                 src="/Images/plate_2.png"
                 alt="food"
-                w={{sm:'6.4rem',base:'5rem',md:'7.8rem'}}
+                w={{sm:'6.4rem',base:'5rem',md:'6.8rem'}}
                 position={'absolute'}
-                top={{sm:'20rem',base:'21.2rem',md:'25rem'}}
+                top={{sm:'20rem',base:'21.2rem',md:'22rem'}}
                 right={{sm:'13rem',base:'12.7rem',md:'15rem'}}
                />
                <Image 
                 src="/Images/plate_3.png"
                 alt="food"
-                w={{sm:'6.5rem',base:'5rem',md:'8rem'}}
+                w={{sm:'6.5rem',base:'5rem',md:'7rem'}}
                 position={'absolute'}
-                top={{sm:'14rem',base:'18rem',md:'19rem'}}
-                right={{sm:'-1rem',base:'2rem',}}
+                top={{sm:'14rem',base:'18rem',md:'18rem'}}
+                right={{sm:'-1rem',base:'2rem',md:'-0.5rem'}}
                />
                <Image 
                 src="/Images/plate_4.png"
                 alt="food"
-                w={{sm:'5.8rem',base:'5rem',md:'7.5rem'}}
+                w={{sm:'5.8rem',base:'5rem',md:'6.5rem'}}
                 position={'absolute'}
-                top={{sm:'20.5rem',base:'21.2rem',md:'25rem'}}
-                right={{sm:'4rem',base:'6rem',md:'5rem'}}
+                top={{sm:'20.5rem',base:'21.2rem',md:'22.2rem'}}
+                right={{sm:'4rem',base:'6rem',md:'7rem'}}
                />
              </Flex>
            </Box>
@@ -184,11 +184,10 @@ const Carousel = () => {
              </Flex>
           </Box>
         </Flex>
-        <Box mt={'-15rem'} mr={'87rem'}>
+        <Box mt={'-7rem'} mr={'72rem'}>
           <Show above="md">
           <SmallCircles/>
           </Show>
-          
         </Box>
   </div>
   )

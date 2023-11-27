@@ -35,6 +35,7 @@ export const foodOffers = [
         rating:'(5.0)',
         text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
     },
+    
     // {
     //     id:5,
     //     image:'/Images/offers.png',
