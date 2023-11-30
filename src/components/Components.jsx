@@ -13,7 +13,7 @@ import { useState, useEffect } from 'react'
          <Flex gap={4} fontSize={{base:'14px',sm:'18px',md:'20px',}} direction={{base: 'column',md:'row'}}>
             <Link 
                 to='offers' 
-                offset={-155}
+                offset={-120}
                   activeClass='active'
                   smooth={true}
                   spy={true} 
@@ -28,13 +28,20 @@ import { useState, useEffect } from 'react'
                   spy={true} className='cursor-pointer font-semibold'>
               Why FoodHut
               </Link>
-           <Link to='menu' 
-                   offset={90}
-                  activeClass='active'
-                  smooth={true}
-                  spy={true}
-                className='cursor-pointer font-semibold'>Our Menu</Link>
-           <Link to='food' className='cursor-pointer font-semibold'>Our Popular Food</Link>
+           <Link 
+             to='menu' 
+              offset={90}
+              activeClass='active'
+              smooth={true}
+              spy={true}
+             className='cursor-pointer font-semibold'>
+             Our Menu
+              </Link>
+           <Link 
+              to='food' 
+              className='cursor-pointer font-semibold'>
+              Our Popular Food
+              </Link>
        </Flex>   
      </div>
     )
@@ -161,7 +168,7 @@ export const HeadingThree = () => {
          <>
       <Flex direction={'column'}>
         <Text w={{sm:'380px',base:'379px',md:'630px'}}>
-       <Text className='lg:text-[4rem] lg:leading-[4rem] font-bold text-[3rem] px-3 lg:px-0'>
+       <Text className='lg:text-[4rem] lg:leading-[4rem] font-bold text-[3rem] px-3 lg:px-0' >
        We are <span className='text-orange'>more</span> than <span className='text-yellow'>multiple</span> Service
        </Text>
        </Text>
@@ -387,6 +394,26 @@ export const ButtonServices = () => {
       <Box className='space-x-10' px={{base:'15px'}}>
        <Button color={'white'} rounded={'full'} size={'sm'} bg={'orange.10'} _hover={''} className='hover:bg-yellow'> 
       <span className='text-[15px] hover:text-black'>About us</span>
+       </Button>
+      </Box>
+      }
+      </>
+  )
+}
+export const ButtonFooter = () => {
+  const {colorMode} = useColorMode()
+  return (
+      <>
+       {colorMode === 'dark' ? 
+      <Box className='space-x-10' px={{base:'11px'}}>
+        <Button color={'white'} rounded={'full'} size={'sm'} bg={'orange.10'} _hover={''} className='hover:bg-yellow hover:text-black '> 
+      <span className='text-[13px] lg:text-[15px]'>Subscribe</span>
+      </Button>
+      </Box>
+       : 
+      <Box className='' px={{base:'11px'}}>
+       <Button color={'white'} rounded={'full'} size={'sm'} bg={'orange.10'} _hover={''} className='hover:bg-yellow'> 
+      <span className='text-[13px] lg:text-[15px] hover:text-black '>Subscribe</span>
        </Button>
       </Box>
       }

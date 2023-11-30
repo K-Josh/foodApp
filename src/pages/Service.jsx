@@ -1,8 +1,10 @@
-import { Box, Flex, Image, Show, Grid, GridItem } from "@chakra-ui/react"
+import { Box, Flex, Image, Show, Grid, GridItem, useColorMode, useColorModeValue } from "@chakra-ui/react"
 import { ButtonServices, HeadingThree } from "../components/Components"
 
 
 const Service = () => {
+   useColorMode()
+   const color = useColorModeValue('white')
   return (
     <Flex justifyContent={'center'} alignItems={'center'} direction={{base:'column', md:'row'}} mt={{sm:'8rem', base:'-16rem',md:'-18rem'}} id="services">
       <Box className="lg:max-h-screen" justifyContent={'center'} alignItems={'center'}>
@@ -16,11 +18,11 @@ const Service = () => {
           mt={{base:'',sm:'-32rem',md:''}}
           position={'relative'}
         />
-        <Box ml={{base:'',sm:'',md:'-12rem'}} mt={{base:'',sm:'-22rem',md:''}}>
+        <Box ml={{base:'',sm:'',md:'-12rem'}} mt={{base:'-25rem',sm:'-22rem',md:''}}>
           <HeadingThree />
         </Box>
  {/* various services offered for small screens */}
-          <Box my={'2rem'} flexDirection={'column'} className="space-y-[1rem]">
+          <Box my={'2rem'} flexDirection={'column'} className={`${color ? 'text-black' : ''} space-y-[1rem]`}>
            <div className="flex items-center gap-5">
            <Image 
             src="/Images/onlineOrder.png"

@@ -14,7 +14,7 @@ import MobileApp from './components/MobileApp';
 
 const App = () => {
   return (
-    <Container maxW={'md'} theme={theme} >
+    <Container theme={theme} >
      <Navbar />
       <Carousel/>
        <Offers/>
