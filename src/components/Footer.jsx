@@ -59,6 +59,11 @@ const Footer = () => {
           </Box>
         </Flex>
       </Flex>
+       <div>
+         <Box className="text-center p-2">
+          <span className="text-sm">Copyright {(new Date().getFullYear())} FoodHut</span>
+         </Box>
+       </div>
     </div>
   )
 }
