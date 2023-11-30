@@ -18,20 +18,7 @@ overflow-x: hidden;
 width: 100vw;
 }
 
-/* buttons */
-.btn {
-    background-color: #F23C17;
-}
-.btn2 {
-  background-color: #fff;
-}
-/* button hovers */
-.btn:hover {
-  background-color: #FEE9DE;
-}
-.btn2:hover {
-  background-color: #F23C17;
-}
+
 /* carousel */
 .carousel_card {
   display: flex;

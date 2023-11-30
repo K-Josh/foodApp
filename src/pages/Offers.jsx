@@ -9,8 +9,8 @@ const Offers = () => {
 ;
   return (
     <>
-    <Flex className="space-y-5 group" direction={'column'} id="offers">
-     <Box mt={{sm:'-8rem', base:'-16rem',md:'rem'}} className="flex justify-center items-center lg:my-4 lg:max-h-screen">
+    <Flex className="space-y-5 group" pt={{md:'3rem'}} direction={'column'} id="offers">
+     <Box mt={{sm:'-17rem', base:'-16rem',md:'rem'}} className="flex justify-center items-center lg:my-4 lg:max-h-screen">
        <Flex mr={'-13rem'} direction={'column'} >
         <Show above="md">
           <Image 

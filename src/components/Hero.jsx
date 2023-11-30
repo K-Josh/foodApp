@@ -7,7 +7,7 @@ import { ButtonHero, HeadingOne, SmallCircles } from "./Components";
 const Carousel = () => {
   return (
   <div className="min-h-screen">
-   <Flex direction={{base:'column', md:'row'}} alignItems={{sm:'center',base:'center',md:'inherit'}} margin={{md:'3rem'}} justifyContent={'center'} mt={{base:'4rem',md:'4rem'}} >
+   <Flex direction={{base:'column', md:'row'}} pt={'5.5rem'} alignItems={{sm:'center',base:'center',md:'inherit'}} margin={{md:'3rem'}} justifyContent={'center'} mt={{base:'4rem',md:'4rem'}} >
         <Flex className="lg:space-x-[2rem] lg:my-1" justifyContent={'center'} >
         <Box className="lg:mt-[2rem] lg:space-y-5 "> 
           <Show above="md">
@@ -183,7 +183,7 @@ const Carousel = () => {
                </Box>
              </Flex>
           </Box>
-        </Flex>
+    </Flex>
         <Box mt={'-7rem'} mr={'72rem'}>
           <Show above="md">
           <SmallCircles/>

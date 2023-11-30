@@ -28,8 +28,13 @@ import { useState, useEffect } from 'react'
                   spy={true} className='cursor-pointer font-semibold'>
               Why FoodHut
               </Link>
-           <Link to='#' className='cursor-pointer font-semibold'>Our Menu</Link>
-           <Link to='#' className='cursor-pointer font-semibold'>Our Popular Food</Link>
+           <Link to='menu' 
+                   offset={90}
+                  activeClass='active'
+                  smooth={true}
+                  spy={true}
+                className='cursor-pointer font-semibold'>Our Menu</Link>
+           <Link to='food' className='cursor-pointer font-semibold'>Our Popular Food</Link>
        </Flex>   
      </div>
     )
@@ -156,11 +161,11 @@ export const HeadingThree = () => {
          <>
       <Flex direction={'column'}>
         <Text w={{sm:'380px',base:'379px',md:'630px'}}>
-       <Text className='lg:text-[4rem] font-bold text-[3rem] px-3 lg:px-0'>
+       <Text className='lg:text-[4rem] lg:leading-[4rem] font-bold text-[3rem] px-3 lg:px-0'>
        We are <span className='text-orange'>more</span> than <span className='text-yellow'>multiple</span> Service
        </Text>
        </Text>
-       <Text w={{base:'',sm:381,md:690}}>
+       <Text w={{base:'',sm:381,md:'41rem'}} color={'whiteAlpha.800'}>
        This is a type of resturent which typically serves food and drink, in addition to light refreshments such as baked goods or snacks. The term comes frome the rench word meaning food
        </Text>
      </Flex> 
@@ -367,6 +372,26 @@ export const ButtonOffers = () => {
         }
         </>
     )
+}
+export const ButtonServices = () => {
+  const {colorMode} = useColorMode()
+  return (
+      <>
+       {colorMode === 'dark' ? 
+      <Box className='space-x-10' px={{base:'15px'}}>
+        <Button color={'white'} rounded={'full'} size={'sm'} bg={'orange.10'} _hover={''} className='hover:bg-yellow hover:text-black'> 
+      <span className='text-[15px] '>About us</span>
+      </Button>
+      </Box>
+       : 
+      <Box className='space-x-10' px={{base:'15px'}}>
+       <Button color={'white'} rounded={'full'} size={'sm'} bg={'orange.10'} _hover={''} className='hover:bg-yellow'> 
+      <span className='text-[15px] hover:text-black'>About us</span>
+       </Button>
+      </Box>
+      }
+      </>
+  )
 }
 
 export const SmallCircles = () => {
