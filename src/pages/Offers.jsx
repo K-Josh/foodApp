@@ -25,7 +25,8 @@ const Offers = () => {
        <Box className="lg:hidden"><HeadingTwo /></Box>
       </Flex>
      </Box>
-      <Show above="md"> {colorMode === 'dark' ? 
+      <Show above="md"> 
+        {colorMode === 'dark' ? 
        <Box className="transition-all ease-out duration-500 cursor-pointer" justifyContent={'center'} alignItems={'center'}>
         <Flex justifyContent={'center'} alignItems={'center'} gap={{base:1,md:2}} direction={{md:'row'}} mt={{base:'-3rem',sm:'',md:'-7rem'}} ml={{md:'-2rem'}}>
       {foodOffers.map((item, index)=> (
@@ -131,7 +132,8 @@ const Offers = () => {
       ))}
         </Flex>
         </Box> 
-       } </Show>
+       } 
+       </Show>
       <div className="lg:hidden relative`">
        <Box mt={{base:'',sm:'-3rem',md:''}}>
         <Cards />

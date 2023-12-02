@@ -15,7 +15,7 @@ body {
 margin: 0;
 padding: 0;
 overflow-x: hidden;
-width: 100vw;
+max-width: 100vw;
 }
 
 
@@ -30,18 +30,6 @@ width: 100vw;
   opacity: 1;
   transform: scale(1);
   pointer-events: visible;
-}
-.carousel-pagination{
- position: absolute;
- left: 50%;
- transform:translate(-50%, 0)
-}
-.pagination-dot {
-  background-color: #F23C17;
-  cursor: pointer;
-}
-.pagination-dot:hover {
-  transform: scale(1.2);
 }
 
 

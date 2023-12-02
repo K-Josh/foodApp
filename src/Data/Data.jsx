@@ -37,7 +37,7 @@ export const foodOffers = [
     },
 ]
 
-export const Menu = [
+export const MenuPage = [
     {
         id:1,
         image:'/Images/offers.png',

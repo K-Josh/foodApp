@@ -1,9 +1,9 @@
- import { Box, Show, VStack, Flex, Image, Input, Text, useColorMode, Button} from '@chakra-ui/react'
+ import { Box, Show, VStack, Flex, Image, Input, Text, useColorMode, Button, SimpleGrid,} from '@chakra-ui/react'
 import { BsFillPlayFill } from 'react-icons/bs'
 import { FaChevronDown, FaSearch } from 'react-icons/fa'
  import {Link} from 'react-scroll'
  import { AiFillStar } from "react-icons/ai"
-import { foodOffers } from '../Data/Data'
+import { MenuPage, foodOffers } from '../Data/Data'
 import { useState, useEffect } from 'react'
  
  // links
@@ -30,7 +30,7 @@ import { useState, useEffect } from 'react'
               </Link>
            <Link 
              to='menu' 
-              offset={90}
+              offset={-100}
               activeClass='active'
               smooth={true}
               spy={true}
@@ -226,7 +226,7 @@ export const ButtonHero = () => {
 
 export const Cards = () => {
     const {colorMode} = useColorMode()
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(null);
     useEffect(() => {
         const interval = setInterval(() => {
           setActiveIndex(prevIndex => (prevIndex + 1) % foodOffers.length);
@@ -290,10 +290,9 @@ export const Cards = () => {
       ))}
         </Flex>
         <Flex justifyContent={'center'} mt={12} className="space-x-3 cursor-pointer ">
-         <Box w={3} h={3} bg={'orange.10'} rounded={'full'}/>
          {foodOffers.map((_, index) => (
             <Box key={index} w={3} h={3}
-            bg={activeIndex === 'index' ? 'orange.10' : '#ffff'} rounded={'full'} onClick={()=> setActiveIndex(index)} className='pagination-dot pagination_active'/>
+            bg={activeIndex === index ? 'orange.10' : '#ffff'} rounded={'full'} onClick={()=> setActiveIndex(index)} className={`${activeIndex === index ? 'scale-110 transition-all duration-200 ease-in' : ''}`} />
          ))}
          </Flex>
          </Box> 
@@ -348,17 +347,153 @@ export const Cards = () => {
         )
       ))}
         </Flex>
+
         <Flex justifyContent={'center'} mt={12} className="space-x-3 cursor-pointer ">
-         <Box w={3} h={3} bg={'orange.10'} rounded={'full'}/>
          {foodOffers.map((_, index) => (
             <Box key={index} w={3} h={3}
-            bg={activeIndex === 'index' ? 'orange.10' : '#2F2F2F2F'} rounded={'full'} onClick={()=> setActiveIndex(index)} className='pagination-dot pagination_active'/>
+            bg={activeIndex === index ? 'orange.10' : '#2F2F2F2F'} rounded={'full'} onClick={()=> setActiveIndex(index)} className={`${activeIndex === index ? 'scale-110 transition-all duration-200 ease-in' : ''}`}/>
          ))}
          </Flex>
          </Box>
          }
        </>
     )
+}
+
+export const Cards2 = () => {
+  const {colorMode} = useColorMode()
+  const [activeIndex, setActiveIndex] = useState(null);
+  useEffect(() => {
+      const interval = setInterval(() => {
+        setActiveIndex(prevIndex => (prevIndex + 1) % MenuPage.length);
+      }, 7000); // Change slide every 3 seconds
+  
+      return () => clearInterval(interval);
+    }, [MenuPage.length]);
+
+  return (
+      <div>
+      {colorMode === 'dark' ? 
+      <Box className="transition-all ease-out duration-500 cursor-pointer overflow-x-hidden" justifyContent={'center'} alignItems={'center'}>
+      <SimpleGrid justifyContent={'center'} alignItems={'center'} direction={'row'} gap={{base:1,md:5}}  mt={{base:'-3rem',sm:'',md:'-7rem'}} className='carousel_card-active'>
+    {MenuPage.map((item, index)=> (
+      activeIndex === index && (
+       <div key={index} >
+     <VStack>
+      <Box className={`${activeIndex === index ? 'scale-110 transition-all duration-200 ease-in' : ''}`}>
+       {/* image */}
+       <Box position={'relative'} top={{base:'6rem',sm:'7rem',md:'5rem'}} right={{base:'-2.6rem',sm:'-2.5rem',md:'-1.4rem'}}>
+       <Image 
+          src={item.image}
+          alt={item.name}
+          w={{base:'12rem',sm:198,md:'14rem'}}
+          h={{base:'12rem',sm:207,md:'14rem'}}  
+         />
+       </Box>
+
+        <Box>
+         <Box bgGradient={'linear(to-b,#ffff 0%,#F62F30 100%)'} className=" opacity-10" mt={{md:'-2rem'}} w={{base:'18rem',md:'20rem'}} h={{base:'19rem',sm:'22rem',md:'27rem'}} rounded={'xl'}>
+         </Box>
+        </Box>
+  {/* avatar and ratings were put in one box and postion relative used */}
+        <Flex justifyContent={'center'}>
+        <Box className="flex items-center justify-center space-x-5" mt={{base:'-24rem',sm:'-29rem',md:'-35rem'}} left={{base:'3rem',sm:'4.5rem',md:'5rem'}} position={'relative'}>
+         <Image 
+        src={item.avatar}
+        w={12}
+        h={6}
+        className=" cursor-pointer"
+      />
+      <Text className="flex items-center space-x-3">
+        <span className="font-bold"><AiFillStar className="text-yellow text-[20px] lg:text-[22px]"/></span>
+        <span className="font-bold text-white">{item.rating}</span>
+      </Text>
+       </Box>
+       <Box className="flex items-center justify-center space-x-5 absolute" mt={{base:'-10rem',sm:'-11rem',md:'-13rem'}} left={{base:'',sm:'4rem',md:'2.3rem'}}>
+       <Text textAlign={'center'} className="space-y-2 lg:space-y-1">
+        <Text className="text-orange font-bold">{item.food}</Text>
+        <Text w={{base:169,md:253}} className="text-[13px] font-semibold lg:text-[20px]">{item.text}</Text>
+       </Text>
+       </Box>
+       <Box mt={{base:'-1rem',sm:'-1.5rem',md:'-2rem'}} left={{base:'-4.3rem',sm:'-4rem',md:'-4.5rem'}} position={'relative'}>
+        <ButtonOffers />
+       </Box>
+       </Flex>
+       </Box>
+    </VStack>
+      </div>
+      )
+    ))}
+      </SimpleGrid>
+      <Flex justifyContent={'center'} mt={12} className="space-x-3 cursor-pointer ">
+       <Box w={3} h={3} rounded={'full'}/>
+       {MenuPage.map((_, index) => (
+          <Box key={index} w={3} h={3}
+          rounded={'full'} onClick={()=> setActiveIndex(index)} bg={activeIndex === index ? 'orange.10' : 'white'}/>
+       ))}
+       </Flex>
+       </Box> 
+      : 
+      <Box className="transition-all ease-out duration-500 cursor-pointer" justifyContent={'center'} alignItems={'center'}>
+      <SimpleGrid row={2} justifyContent={'center'} alignItems={'center'} direction={'row'} gap={{base:1,md:5}}  mt={{base:'-3rem',sm:'',md:'-7rem'}} className='carousel_card-active'>
+    {MenuPage.map((item, index)=> (
+      activeIndex === index && (
+       <div key={index} >
+     <VStack>
+      <Box  className=' cursor-pointer shadow-sm overflow-hidden transition-all duration-300 carousel_card-active ease-in-out'>
+       {/* image */}
+       <Box position={'relative'} top={{base:'6rem',sm:'7rem',md:'5rem'}} right={{base:'-2.6rem',sm:'-2.5rem',md:'-1.4rem'}}>
+       <Image 
+          src={item.image}
+          alt={item.name}
+          w={{base:'12rem',sm:198,md:'14rem'}}
+          h={{base:'12rem',sm:207,md:'14rem'}}  
+         />
+       </Box>
+        <Box>
+         <Box bgGradient={'linear(to-b,#ffff 0%,#F62F30 100%)'} className=" opacity-10" mt={{md:'-2rem'}} w={{base:'18rem',md:'20rem'}} h={{base:'19rem',sm:'22rem',md:'27rem'}} rounded={'xl'}>
+         </Box>
+        </Box>
+  {/* avatar and ratings were put in one box and postion relative used */}
+        <Flex justifyContent={'center'}>
+        <Box className="flex items-center justify-center space-x-5" mt={{base:'-24rem',sm:'-29rem',md:'-35rem'}} left={{base:'3rem',sm:'4.5rem',md:'5rem'}} position={'relative'}>
+         <Image 
+        src={item.avatar}
+        w={12}
+        h={6}
+        className=" cursor-pointer"
+      />
+      <Text className="flex items-center space-x-3">
+        <span className="font-bold"><AiFillStar className="text-yellow text-[20px] lg:text-[22px]"/></span>
+        <span className="font-bold text-black">{item.rating}</span>
+      </Text>
+       </Box>
+       <Box className="flex items-center justify-center space-x-5 absolute" mt={{base:'-10rem',sm:'-11rem',md:'-13rem'}} left={{base:'',sm:'4rem',md:'2.3rem'}}>
+       <Text textAlign={'center'} className="space-y-2 lg:space-y-1">
+        <Text className="text-orange font-bold">{item.food}</Text>
+        <Text w={{base:169,md:253}} className="text-[13px] font-semibold lg:text-[20px]">{item.text}</Text>
+       </Text>
+       </Box>
+       <Box mt={{base:'-1rem',sm:'-1.5rem',md:'-2rem'}} left={{base:'-4.3rem',sm:'-4rem',md:'-4.5rem'}} position={'relative'}>
+        <ButtonOffers />
+       </Box>
+       </Flex>
+       </Box>
+    </VStack>
+      </div>
+      )
+    ))}
+      </SimpleGrid>
+      <Flex justifyContent={'center'} mt={12} className="space-x-3 cursor-pointer ">
+       {MenuPage.map((_, index) => (
+          <Box key={index} w={3} h={3}
+           rounded={'full'} onClick={()=> setActiveIndex(index)} bg={activeIndex === index ? 'orange.10' : 'gray.300'} className={`${activeIndex === index ? 'scale-110 transition-all duration-200 ease-in' : ''}`}/>
+       ))}
+       </Flex>
+       </Box>
+       }
+     </div>
+  )
 }
 export const ButtonOffers = () => {
     const {colorMode} = useColorMode()

@@ -14,7 +14,7 @@ import MobileApp from './components/MobileApp';
 
 const App = () => {
   return (
-    <Container theme={theme} >
+    <Container className='overflow-x-hidden' theme={theme} >
      <Navbar />
       <Carousel/>
        <Offers/>
